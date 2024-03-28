@@ -1,0 +1,194 @@
+.btnNext{
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    border: none;
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+    width: 46px; 
+    height: 46px;
+    cursor: pointer;
+    margin: 10px;
+}
+  
+.btnNext span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+  
+.btnNext span:after {
+    content: '\01F862';
+    position: relative;
+}
+
+.btnNext:hover {
+    background-color:#B7B7B7;
+    color: #FFFFFF;
+}
+/*-----------------------------*/
+
+.btnViewAll{
+    display: inline-block;
+    border-radius: 15px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 190px; 
+    height: 46px;
+    cursor: pointer;
+    margin: 10px;
+}
+  
+.btnViewAll span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+  
+.btnViewAll span:after {
+    content: '\01F862';
+    right: -20px
+}
+
+.btnViewAll:hover {
+    color: #D2D2D2;
+}
+/*-----------------------------*/
+
+.btnSignInHome{
+    display: inline-block;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 2px solid #FF0000;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 83px; 
+    height: 32px;
+    padding: 2px;
+    margin-left: 10px; 
+}
+
+.btnSignInHome:hover{
+    background-color:#f44336; ;
+}
+
+.btnSignIn{
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #FF0000;;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 83px; 
+    height: 32px;
+    padding: 2px;
+    margin-left: 10;
+}
+
+.btnSignIn:hover{
+    background-color:#CF0A0A; ;
+}
+
+.btnLogin{
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #D1A6AC;;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 83px; 
+    height: 32px;
+    padding: 2px;
+    margin-left: 10;
+}
+
+.btnLogin:hover{
+    background-color:#A78086; ;
+}
+/*-----------------------------*/
+
+.btnAdd1{
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #FF0000;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 185px; 
+    height: 40px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.btnAdd1:hover{
+    background-color: #CF0A0A;
+    color: white;
+}
+/*-----------------------------*/
+
+.btnAdd2{
+    display: inline-block;
+    border-radius: 15px;
+    background-color: #FF0000;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 185px; 
+    height: 40px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+}
+  
+.btnAdd2 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+  
+.btnAdd2 span:after {
+    content: '\002B';
+    position: absolute;
+    opacity: 0;
+    left: 20px;
+    transition: 0.5s;
+}
+  
+.btnAdd2:hover span {
+    padding-left: 25px;
+}
+  
+.btnAdd2:hover span:after {
+    opacity: 1;
+    left: 0;
+}
+
+.btnAdd2:hover{
+    background-color: #CF0A0A;
+    color: white;
+}
+/*-----------------------------*/
+
+.time2{
+    color: white;
+    
+}
+
+.container-icon{
+    display: flex;
+    width: 100px;
+    border: 2px solid #FF0000;
+    border-radius: 5px;
+    padding: 4px 4px 4px 8px;
+    margin-left: 10px;
+}
+
+

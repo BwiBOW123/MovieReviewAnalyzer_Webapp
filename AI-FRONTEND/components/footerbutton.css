@@ -1,0 +1,36 @@
+.part1{
+    color:#FFFFFF;
+    font-size: 16px;
+    font-weight: 800;
+}
+.part2{
+    color:#FFFFFF;
+    font-size: 16px;
+    padding-top: 20px;
+}
+.part3{
+    color:#FFFFFF;
+    font-size: 16px;
+    padding-top: 20px;
+}
+.part4{
+    color:#FFFFFF;
+    font-size: 16px;
+    padding-top: 20px;
+}
+
+.part2:hover{
+    text-decoration: underline;
+}
+.part3:hover{
+    text-decoration: underline;
+}
+.part4:hover{
+    text-decoration: underline;
+}
+
+.container-fButton{
+    display: inline-table;
+    width: 250px;
+    margin-left: 37px;
+}

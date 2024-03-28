@@ -1,0 +1,19 @@
+.part1-1{
+    color:#FFFFFF;
+    font-size: 16px;
+}
+.part1-2{
+    color:#FFFFFF;
+    font-size: 16px;
+    padding-top: 20px;
+}
+.part1-3{
+    color:#FFFFFF;
+    font-size: 16px;
+    padding-top: 30px;
+}
+.container{
+    display: inline-table;
+    width: 250px;
+    margin-left: 37px;
+}

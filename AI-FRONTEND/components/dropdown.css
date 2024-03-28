@@ -1,0 +1,40 @@
+.dropdown{
+    position: relative;
+    display: inline;
+}
+.dropdown:hover .dropdown-list{
+    display: inline;
+}
+.dropdown-list:hover{
+    display: inline;
+}
+.activeDrop:hover .dropdown-list{
+    display: inline;
+}
+.dropdown-list{
+    text-align: center;
+    position: absolute;
+    padding: 20px;
+    color: black;
+    top: 25px;
+    right: -20px;
+    display: none;
+    background-color: rgb(0, 0, 0);
+    border-radius: 4px;
+    z-index: 2;
+}
+.droptext{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    color: white;
+    width: 100%;
+}
+.imagein{
+    display: inline;
+    margin-left: 2px;
+    z-index: 10;
+}
+.categoryDrop{
+    gap: 4px;
+}

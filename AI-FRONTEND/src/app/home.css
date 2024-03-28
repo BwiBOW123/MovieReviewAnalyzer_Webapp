@@ -1,0 +1,28 @@
+html,body{
+    scroll-behavior: smooth;
+}
+.container-content{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 0px 200px 0px 200px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#TRENDING{
+    margin-top: 140px;
+}
+.container-content-sm{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin: 0px 200px 0px 200px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+h1{
+    margin: 60px 70px 40px 200px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}

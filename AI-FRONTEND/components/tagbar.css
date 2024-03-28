@@ -1,0 +1,96 @@
+.tagHD{
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 32px; 
+    height: 34px;
+    padding: 4px;
+    margin-top: 10;
+}
+.back-color-red{
+    background-color: red;
+    color: white;
+}
+
+.back-color-white{
+    background-color: white;
+    color: black;
+}
+.tagTime{
+    display: flex;
+    color: white;
+    padding-left: 4px;
+    font-weight: bold;
+}
+
+.tagSeason{
+    display: inline-block;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #f44336;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    width: 83px; 
+    height: 34px;
+    padding: 2px;
+    margin-left: 10px; 
+}
+
+.tagCategory{
+    display: inline;
+    text-align: center;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+
+.tagDate{
+    display: inline-block;
+    border-radius: 5px;
+    color: #FFFFFF;
+    padding-left: 4px; 
+    font-weight: bold;
+}
+
+.tagRating{  
+    display: flex;
+    color: #37ff41;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    padding-left: 4px;
+    font-size: 18px;
+    font-weight: 450;
+}
+.tagRating2{  
+    display: flex;
+    color: #FFFFFF;
+    padding-left: 4px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.container-iconTagbar {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.container-icon{
+    display:flex;
+}
+.Tagtime{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    background-color: rgb(255, 57, 57);
+    border-radius: 10px;
+    margin-left: 4px;
+}

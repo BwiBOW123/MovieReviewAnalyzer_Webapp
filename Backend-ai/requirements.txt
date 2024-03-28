@@ -1,0 +1,6 @@
+python-dotenv
+psycopg2
+fastapi
+uvicorn
+typing
+python-multipart

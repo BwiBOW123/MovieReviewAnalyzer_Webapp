@@ -1,0 +1,29 @@
+.Container-Search{
+    margin-top: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+h1{
+    color: white;
+}
+.text{
+    color: white;
+}
+p{
+    color: white;
+}
+.LinkSE{
+    color: white;
+    font-size: 20px;
+    margin-left: 6px;
+}
+.LinkSE:hover{
+    color: red;
+}
+.in{
+    padding: 10px;
+    width: 300px;
+}
