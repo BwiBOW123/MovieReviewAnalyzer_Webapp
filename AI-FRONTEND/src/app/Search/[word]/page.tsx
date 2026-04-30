@@ -5,8 +5,10 @@ import Card2 from '../../../../components/Card2';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
+const DATA_API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://127.0.0.1:5000';
+
 async function getData(c_name: any) {
-  const res = await fetch(`http://127.0.0.1:8000/search/${c_name}`, { next: { revalidate: 3000 } });
+  const res = await fetch(`${DATA_API_BASE_URL}/search/${c_name}`, { next: { revalidate: 3000 } });
   const data = res.json();
   return data;
 }

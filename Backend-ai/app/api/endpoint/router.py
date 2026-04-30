@@ -6,12 +6,15 @@ from database import DATABASE
 import base64
 from typing import List
 import json
+import os
+import mock_data
 router = APIRouter()
 db = DATABASE()
 MovieData = PostgresMovieRepository(db)
 CommentData = PostgresCommentRepository(db)
 SentimentData = PostgresSentimentRepository(db)
 SentimentData = PostgresSentimentRepository(db)
+USE_MOCK_DATA = os.getenv("USE_MOCK_DATA", "").lower() in {"1", "true", "yes"}
 
 
 @router.get('/')
@@ -21,12 +24,19 @@ def root():
 
 @router.get("/movies")
 def getMovies():
+    if USE_MOCK_DATA:
+        return {"data": mock_data.movie_list()}
     movie = MovieData.get_movies()
     return {"data": movie}
 
 
 @router.get("/movies/{movie_id}")
 def getmovie(movie_id: int):
+    if USE_MOCK_DATA:
+        movie = mock_data.find_movie(movie_id)
+        if movie:
+            return {"data": movie}
+        raise HTTPException(status_code=404, detail="Movie not found")
     movie = MovieData.get_movie(movie_id)
     if movie:
         return {"data": movie}
@@ -36,6 +46,8 @@ def getmovie(movie_id: int):
 
 @router.get("/Category/{c_name}/{limit}")
 def getmovieCategory(c_name: str, limit: int):
+    if USE_MOCK_DATA:
+        return {"data": mock_data.movies_by_category(c_name, limit)}
     movie = MovieData.get_moviebyCategory(c_name, limit)
     if movie:
         return {"data": movie}
@@ -45,6 +57,8 @@ def getmovieCategory(c_name: str, limit: int):
 
 @router.get("/Rating/{limit}")
 def getmovieRaing(limit: int = 0):
+    if USE_MOCK_DATA:
+        return {"data": mock_data.movies_by_rating(limit)}
 
     movie = MovieData.get_moviebyRating(limit)
     if movie:
@@ -96,6 +110,8 @@ async def create_movie(
 
 @router.get("/comment/{c_id}")
 def getComment(c_id: int):
+    if USE_MOCK_DATA:
+        return {"data": mock_data.get_comments(c_id)}
     cmt = CommentData.get_Comment(c_id)
     return {"data": cmt}
 
@@ -115,6 +131,9 @@ async def create_comment(cmt_data: UploadFile = File(...),):
             "cmt_text": cmt_text,
             "m_id": m_id,
         }
+        if USE_MOCK_DATA:
+            mock_data.add_comment(int(m_id), cmt_text)
+            return {"msg": "Create Success"}
         CommentData.create_Comment(data)
 
     except:
@@ -124,6 +143,8 @@ async def create_comment(cmt_data: UploadFile = File(...),):
 
 @router.get("/sentiment/{m_id}")
 def getsentiment(m_id: int):
+    if USE_MOCK_DATA:
+        return {"data": mock_data.get_sentiment(m_id)}
     cmt = SentimentData.get_Sentiment(m_id)
     return {"data": cmt}
 
@@ -154,17 +175,26 @@ async def createsentiment(s_data: UploadFile = File(...)):
 
 @router.get("/comment/{c_id}")
 def getComment(c_id: int):
+    if USE_MOCK_DATA:
+        return {"data": mock_data.get_comments(c_id)}
     cmt = CommentData.get_Comment(c_id)
     return {"data": cmt}
 
 
 @router.get("/sentiment/{m_id}")
 def getsentiment(m_id: int):
+    if USE_MOCK_DATA:
+        return {"data": mock_data.get_sentiment(m_id)}
     cmt = SentimentData.get_Sentiment(m_id)
     return {"data": cmt}
 
 @router.get("/search/{m_name}")
 def getsearch(m_name: str):
+    if USE_MOCK_DATA:
+        movies = mock_data.search_movies(m_name)
+        if movies:
+            return {"data": movies}
+        raise HTTPException(status_code=404, detail="Movie not found")
     movie = MovieData.get_movies_search(m_name)
     if movie:
         return {"data": movie}
@@ -173,8 +203,17 @@ def getsearch(m_name: str):
 
 @router.get("/search_by_sort/{sort_by}/{way}/{limit}")
 def getsearchbysort(sort_by: str, way: int, limit: int):
+    if USE_MOCK_DATA:
+        return {"data": mock_data.sorted_movies(sort_by, way, limit)}
     movies = MovieData.get_top_movies_by(sort_by, way, limit)
     if movies:
         return {"data": movies}
     else:
         raise HTTPException(status_code=404, detail="Movie not found")
+
+
+@router.post("/predict")
+async def predict(file: UploadFile = File(...)):
+    if USE_MOCK_DATA:
+        return {"label": "positive", "confidence": 0.88}
+    return {"label": "unknown", "confidence": 0}

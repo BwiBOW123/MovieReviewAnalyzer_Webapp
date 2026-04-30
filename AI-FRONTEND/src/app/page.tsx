@@ -4,25 +4,28 @@ import "./globals.css"
 
 import Card2 from '../../components/Card2';
 
+const DATA_API_BASE_URL = process.env.API_BASE_URL ?? 'http://127.0.0.1:5000';
+
+export const dynamic = 'force-dynamic';
 
 
 async function getData(c_name:string) {
-  const res = await fetch(`http://127.0.0.1:8000/Category/${c_name}/4`,{next:{revalidate:3000}})
+  const res = await fetch(`${DATA_API_BASE_URL}/Category/${c_name}/4`,{next:{revalidate:3000}})
   const data = res.json()
   return data
 }
 async function getSentiment() {
-  const res = await fetch(`http://127.0.0.1:8000/search_by_sort/sentiment/1/8`,{next:{revalidate:3000}})
+  const res = await fetch(`${DATA_API_BASE_URL}/search_by_sort/sentiment/1/8`,{next:{revalidate:3000}})
   const data = res.json()
   return data
 }
 async function getSentimentLOW() {
-  const res = await fetch(`http://127.0.0.1:8000/search_by_sort/sentiment/0/8`,{next:{revalidate:3000}})
+  const res = await fetch(`${DATA_API_BASE_URL}/search_by_sort/sentiment/0/8`,{next:{revalidate:3000}})
   const data = res.json()
   return data
 }
 async function getDataRating() {
-  const res = await fetch(`http://127.0.0.1:8000/Rating/4`,{next:{revalidate:3000}})
+  const res = await fetch(`${DATA_API_BASE_URL}/Rating/4`,{next:{revalidate:3000}})
   const data = res.json()
   return data
 }

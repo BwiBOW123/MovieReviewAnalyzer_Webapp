@@ -35,12 +35,12 @@ type Props = {
 const Card2 = ({Data,classNameCTN,classNameC,w = 350,h = 350,link="/"}:Props) => {
   const base64String = Data['Image'];
   const Tag:[] = Data['Tag']
-  const decodedImage = atob(base64String);
+  const imageSrc = base64String?.startsWith('data:') ? base64String : `data:image/png;base64,${base64String}`;
   return (
     <Link id={Data['id'].toString()} className="Card" href={`/movie-info/${Data['id']}`}>
         <div id={Data['id'].toString()} className={classNameCTN}>
             <div id={Data['id'].toString()} className={classNameC}>
-            <Image className="image" src={`data:image/jpeg;base64,${decodedImage}`} width={w} height={h} alt="Image in Card"/>
+            <Image className="image" src={imageSrc} width={w} height={h} alt="Image in Card"/>
             </div>
             <div className="time">
               <Tagbar className="Tagtime">{formatTime(Data['duration'])}</Tagbar>

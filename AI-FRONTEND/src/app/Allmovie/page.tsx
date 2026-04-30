@@ -2,9 +2,12 @@
 import "./style.css"
 import Card2 from "../../../components/Card2"
 
+const DATA_API_BASE_URL = process.env.API_BASE_URL ?? 'http://127.0.0.1:5000';
+
+export const dynamic = 'force-dynamic';
 
 async function getSentiment() {
-  const res = await fetch(`http://127.0.0.1:8000/search_by_sort/sentiment/1/80`,{next:{revalidate:3000}})
+  const res = await fetch(`${DATA_API_BASE_URL}/search_by_sort/sentiment/1/80`,{next:{revalidate:3000}})
   const data = res.json()
   return data
 }

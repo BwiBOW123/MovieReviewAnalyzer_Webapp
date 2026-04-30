@@ -3,8 +3,12 @@ import "./style.css";
 import Card2 from '../../../components/Card2';
 import React from 'react'
 
+const DATA_API_BASE_URL = process.env.API_BASE_URL ?? 'http://127.0.0.1:5000';
+
+export const dynamic = 'force-dynamic';
+
 async function getData(c_name:string) {
-    const res = await fetch(`http://127.0.0.1:8000/Category/${c_name}/10`,{next:{revalidate:3000}})
+    const res = await fetch(`${DATA_API_BASE_URL}/Category/${c_name}/10`,{next:{revalidate:3000}})
     const data = res.json()
     return data
 }
